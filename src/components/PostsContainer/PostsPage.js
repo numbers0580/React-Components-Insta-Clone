@@ -6,8 +6,9 @@ import "./Posts.css";
 // import data 
 import dummyData from "../../dummy-data";
 
-const PostsPage = () => {
+const PostsPage = props => {
   // set up state for your data
+  //const {listOfPosts} = props;
   const [theItem, updateItem] = useState(dummyData);
   return (
     <div className="posts-container-wrapper">

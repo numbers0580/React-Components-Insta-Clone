@@ -5,7 +5,12 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faHeart, faCircle, faCompass } from '@fortawesome/free-regular-svg-icons'
 import "./SearchBar.css";
 
-const SearchBar = () => {
+const SearchBar = props => {
+  const {updateProps} = props;
+  const refreshSearch = event => {
+    updateProps(event.target.value);
+  };
+  
   return (
     <div className="search-bar-wrapper">
       <div className="social">
@@ -15,6 +20,7 @@ const SearchBar = () => {
         <input
           type="text"
           placeholder="Search"
+          onChange={refreshSearch}
         />
       </form>
       <div className="social-wrapper">
